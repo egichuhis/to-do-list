@@ -67,7 +67,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Website Demo Link](https://egichuhis.github.io/Awesome-Books/)
+- [Website Demo Link](https://egichuhis.github.io/to-do-list/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

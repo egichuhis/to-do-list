@@ -1,11 +1,11 @@
 const todoItems = [
   {
-    description: 'Do laundry',
+    description: 'Do laundry at Naks Vegas Mart',
     completed: false,
     index: 0,
   },
   {
-    description: 'Grocery shopping',
+    description: 'Grocery shopping at Wallmart',
     completed: false,
     index: 1,
   },

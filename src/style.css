@@ -34,6 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: solid 1px #f6f6f6;
 }
 
 #list-items-div {
@@ -52,4 +53,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+#add-item-input {
+  font-size: 18px;
+  border: none;
+}
+
+#list-footer-div {
+  color: grey;
 }

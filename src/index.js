@@ -1,52 +1,25 @@
 import './style.css';
 import refreshIconImg from './imgs/refresh.png';
 import returnIconImg from './imgs/diskette.png';
-import optionsIconImg from './imgs/options.png';
 import todoItems from './modules/todoItems.js';
+import * as DOM from './modules/domManipulation.js';
+import generateList from './modules/generateList.js';
 
-const listItems = (listOfItems) => {
+const createComponent = () => {
   const listContainer = document.getElementById('list-container');
-  const listTitleDiv = document.createElement('div');
-  const addToListDiv = document.createElement('div');
-  addToListDiv.id = 'add-to-list-div';
-  const addItemInput = document.createElement('input');
-  addItemInput.id = 'add-item-input';
-  addItemInput.type = 'text';
-  addItemInput.placeholder = 'Add to your list...';
-  listTitleDiv.id = 'list-title-div';
-  const listTitle = document.createElement('h4');
-  listTitle.textContent = 'Today\'s To Do';
-  const refreshIcon = document.createElement('img');
-  refreshIcon.id = 'refresh-img';
-  refreshIcon.src = refreshIconImg;
-  const returnIcon = document.createElement('img');
-  returnIcon.id = 'return-img';
-  returnIcon.src = returnIconImg;
-  const listItemsDiv = document.createElement('div');
+  const listTitleDiv = DOM.createDiv('list-title-div');
+  const addToListDiv = DOM.createDiv('add-to-list-div');
+  const listItemsDiv = DOM.createDiv('list-items-div');
+  const addItemInput = DOM.createInput('add-item-input', 'text', 'Add to your list...');
+  const listTitle = DOM.createHeading("Today's To Do");
+  const refreshIcon = DOM.createImage('refresh-img', refreshIconImg);
+  const returnIcon = DOM.createImage('return-img', returnIconImg);
 
-  listOfItems.forEach((item) => {
-    const listItem = document.createElement('li');
-    listItem.id = 'list-item';
-    const listItemCheck = document.createElement('input');
-    listItemCheck.type = 'checkbox';
-    const itemDescription = document.createElement('p');
-    itemDescription.textContent = item.description;
-    const optionsIcon = document.createElement('img');
-    optionsIcon.src = optionsIconImg;
-    optionsIcon.id = 'options-img';
-    listItem.appendChild(listItemCheck);
-    listItem.appendChild(itemDescription);
-    listItem.appendChild(optionsIcon);
-    listItemsDiv.appendChild(listItem);
-  });
+  generateList(todoItems, listItemsDiv);
 
-  listTitleDiv.appendChild(listTitle);
-  listTitleDiv.appendChild(refreshIcon);
-  addToListDiv.appendChild(addItemInput);
-  addToListDiv.appendChild(returnIcon);
-  listContainer.appendChild(listTitleDiv);
-  listContainer.appendChild(addToListDiv);
-  listContainer.appendChild(listItemsDiv);
+  DOM.appendChildren(listTitleDiv, listTitle, refreshIcon);
+  DOM.appendChildren(addToListDiv, addItemInput, returnIcon);
+  DOM.appendChildren(listContainer, listTitleDiv, addToListDiv, listItemsDiv);
 };
 
-listItems(todoItems);
+createComponent(todoItems);

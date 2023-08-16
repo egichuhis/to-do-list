@@ -5,14 +5,14 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devServer: {
-    static: './dist',
+    static: './docs',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html'}),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
   ],
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     clean: true,
   },
   module: {
@@ -20,6 +20,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

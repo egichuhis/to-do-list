@@ -27,7 +27,13 @@ const createComponent = () => {
   DOM.appendChildren(listFooterDiv, listFooter);
   DOM.appendChildren(listContainer, listTitleDiv, addToListDiv, listItemsDiv, listFooterDiv);
 
-  returnIcon.addEventListener('click', () => addItems(todoItems));
+  returnIcon.addEventListener('click', () => addItems(todoItems, listItemsDiv));
+
+  addItemInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      addItems(todoItems, listItemsDiv);
+    }
+  });
 };
 
 createComponent();

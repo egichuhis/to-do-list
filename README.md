@@ -12,7 +12,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Awesome books: with ES6 ](#-awesome-books-with-es6-)
+- [📖 TO-DO LIST ](#-to-do-list-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -31,9 +31,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Awesome books: with ES6 <a name="about-project"></a>
+# 📖 TO-DO LIST <a name="about-project"></a>
 
-**Awesome Books** is a basic website that allows users to add/remove books from a list. This is achieved by using JavaScript ES6 including modules, arrow functions, destructuring, etc. We also dynamically modify the DOM and add basic event listeners and events delegation.
+**TO-DO LIST** is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,18 +48,15 @@
 <details>
   <summary>CSS</summary>
 </details>
+<details>
+  <summary>Webpack</summary>
+</details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Navigation bar**
-- **Real-Time Date and Time Display**
-- **Contact section**
-- **Footer section**
-- **List of Books section**
-- **Add Book section**
-- **Remove book feature**
+- **List structure layout**
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,7 +95,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/egichuhis/Awesome-Books-ES6.git
+  git clone https://github.com/egichuhis/to-do-list.git
 ```
 
 ### Install
@@ -116,7 +113,9 @@ Example command:
 
 To run the project:
 
-Open the `index.html` file in your browser.
+Open the Terminal / Command-Line utility in your computer / code editor.
+
+Run `npm run start`. A browser window will be launched automatically with your project
 
 ### Run tests
 
@@ -146,8 +145,11 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Styling to website to improve UI/UX**
-- [ ] **Design with Bootstrap**
+- [ ] **Adding a new item**
+- [ ] **Removing a selected item**
+- [ ] **Marking a selected item as complete**
+- [ ] **Removing all items marked as complete at once**
+- [ ] **Reordering a selected item (as drag-and-drop)**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

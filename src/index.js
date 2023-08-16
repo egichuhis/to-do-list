@@ -1,33 +1,10 @@
-import _ from 'lodash';
 import './style.css';
 import refreshIconImg from './imgs/refresh.png';
 import returnIconImg from './imgs/diskette.png';
 import optionsIconImg from './imgs/options.png';
+import todoItems from './modules/todoItems.js';
 
-const todoItems = [
-  {
-    description: 'Milk Cows',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Milk Goats',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Milk Camels',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Milk Elephant',
-    completed: false,
-    index: 3,
-  },
-];
-
-const listItems = () => {
+const listItems = (listOfItems) => {
   const listContainer = document.getElementById('list-container');
   const listTitleDiv = document.createElement('div');
   const addToListDiv = document.createElement('div');
@@ -36,7 +13,6 @@ const listItems = () => {
   addItemInput.id = 'add-item-input';
   addItemInput.type = 'text';
   addItemInput.placeholder = 'Add to your list...';
-  const listItemsDiv = document.createElement('div');
   listTitleDiv.id = 'list-title-div';
   const listTitle = document.createElement('h4');
   listTitle.textContent = 'Today\'s To Do';
@@ -46,15 +22,23 @@ const listItems = () => {
   const returnIcon = document.createElement('img');
   returnIcon.id = 'return-img';
   returnIcon.src = returnIconImg;
-  const listItem = document.createElement('li');
-  listItem.id = 'list-item';
-  const listItemCheck = document.createElement('input');
-  listItemCheck.type = 'checkbox';
-  const itemDescription = document.createElement('p');
-  itemDescription.textContent = 'Hello World, Micronauts are awesome!';
-  const optionsIcon = document.createElement('img');
-  optionsIcon.src = optionsIconImg;
-  optionsIcon.id = 'options-img';
+  const listItemsDiv = document.createElement('div');
+
+  listOfItems.forEach((item) => {
+    const listItem = document.createElement('li');
+    listItem.id = 'list-item';
+    const listItemCheck = document.createElement('input');
+    listItemCheck.type = 'checkbox';
+    const itemDescription = document.createElement('p');
+    itemDescription.textContent = item.description;
+    const optionsIcon = document.createElement('img');
+    optionsIcon.src = optionsIconImg;
+    optionsIcon.id = 'options-img';
+    listItem.appendChild(listItemCheck);
+    listItem.appendChild(itemDescription);
+    listItem.appendChild(optionsIcon);
+    listItemsDiv.appendChild(listItem);
+  });
 
   listTitleDiv.appendChild(listTitle);
   listTitleDiv.appendChild(refreshIcon);
@@ -63,10 +47,6 @@ const listItems = () => {
   listContainer.appendChild(listTitleDiv);
   listContainer.appendChild(addToListDiv);
   listContainer.appendChild(listItemsDiv);
-  listItemsDiv.appendChild(listItem);
-  listItem.appendChild(listItemCheck);
-  listItem.appendChild(itemDescription);
-  listItem.appendChild(optionsIcon);
 };
 
-listItems();
+listItems(todoItems);

@@ -8,3 +8,25 @@
   justify-content: space-between;
   align-items: center;
 }
+
+#add-to-list-div {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#return-img {
+  width: 15px;
+    height: 15px;
+}
+
+#options-img {
+  width: 15px;
+    height: 15px;
+}
+
+#list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

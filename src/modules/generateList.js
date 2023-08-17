@@ -1,6 +1,7 @@
 import * as DOM from './domManipulation.js';
 import deleteIconImg from '../imgs/delete.png';
 import removeItems from './removeItems.js';
+import editItem from './editItem.js';
 
 const generateList = (items, listItemsDiv) => {
   listItemsDiv.innerHTML = '';
@@ -27,7 +28,8 @@ const generateList = (items, listItemsDiv) => {
     });
 
     descriptionInput.addEventListener('blur', () => {
-      item.description = descriptionInput.value;
+      editItem(item, descriptionInput.value, items);
+      localStorage.setItem('todoItemsData', JSON.stringify(items));
       generateList(items, listItemsDiv);
     });
   });

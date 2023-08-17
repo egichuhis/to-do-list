@@ -1,15 +1,37 @@
 import * as DOM from './domManipulation.js';
-import optionsIconImg from '../imgs/options.png';
+import deleteIconImg from '../imgs/delete.png';
+import removeItems from './removeItems.js';
+import editItem from './editItem.js';
 
 const generateList = (items, listItemsDiv) => {
+  listItemsDiv.innerHTML = '';
+
   items.forEach((item) => {
     const listItem = document.createElement('li');
-    listItem.id = 'list-item';
+    listItem.className = 'list-item';
     const listItemCheck = DOM.createCheckbox();
-    const itemDescription = DOM.createParagraph(item.description);
-    const optionsIcon = DOM.createImage('options-img', optionsIconImg);
-    DOM.appendChildren(listItem, listItemCheck, itemDescription, optionsIcon);
+    const descriptionInput = document.createElement('input');
+    descriptionInput.type = 'text';
+    descriptionInput.value = item.description;
+    descriptionInput.className = 'edit-input';
+    const deleteIcon = DOM.createImage('options-img', deleteIconImg);
+    DOM.appendChildren(listItem, listItemCheck, descriptionInput, deleteIcon);
     listItemsDiv.appendChild(listItem);
+
+    deleteIcon.addEventListener('click', () => {
+      removeItems(item.index - 1, items);
+      generateList(items, listItemsDiv);
+    });
+
+    descriptionInput.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    descriptionInput.addEventListener('blur', () => {
+      editItem(item, descriptionInput.value, items);
+      localStorage.setItem('todoItemsData', JSON.stringify(items));
+      generateList(items, listItemsDiv);
+    });
   });
 };
 

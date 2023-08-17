@@ -1,5 +1,6 @@
 import * as DOM from './domManipulation.js';
-import optionsIconImg from '../imgs/options.png';
+import deleteIconImg from '../imgs/delete.png';
+import removeItems from './removeItems.js';
 
 const generateList = (items, listItemsDiv) => {
   listItemsDiv.innerHTML = '';
@@ -9,9 +10,14 @@ const generateList = (items, listItemsDiv) => {
     listItem.className = 'list-item';
     const listItemCheck = DOM.createCheckbox();
     const itemDescription = DOM.createParagraph(item.description);
-    const optionsIcon = DOM.createImage('options-img', optionsIconImg);
-    DOM.appendChildren(listItem, listItemCheck, itemDescription, optionsIcon);
+    const deleteIcon = DOM.createImage('options-img', deleteIconImg);
+    DOM.appendChildren(listItem, listItemCheck, itemDescription, deleteIcon);
     listItemsDiv.appendChild(listItem);
+
+    deleteIcon.addEventListener('click', () => {
+      removeItems(item.index - 1, items);
+      generateList(items, listItemsDiv);
+    });
   });
 };
 

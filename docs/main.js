@@ -146,7 +146,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domManipulation.js */ \"./src/modules/domManipulation.js\");\n/* harmony import */ var _imgs_options_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../imgs/options.png */ \"./src/imgs/options.png\");\n\n\n\nconst generateList = (items, listItemsDiv) => {\n  listItemsDiv.innerHTML = '';\n\n  items.forEach((item) => {\n    const listItem = document.createElement('li');\n    listItem.className = 'list-item';\n    const listItemCheck = _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.createCheckbox();\n    const itemDescription = _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.createParagraph(item.description);\n    const optionsIcon = _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.createImage('options-img', _imgs_options_png__WEBPACK_IMPORTED_MODULE_1__);\n    _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.appendChildren(listItem, listItemCheck, itemDescription, optionsIcon);\n    listItemsDiv.appendChild(listItem);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generateList);\n\n\n//# sourceURL=webpack://webpack-starter/./src/modules/generateList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domManipulation.js */ \"./src/modules/domManipulation.js\");\n/* harmony import */ var _imgs_delete_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../imgs/delete.png */ \"./src/imgs/delete.png\");\n/* harmony import */ var _removeItems_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./removeItems.js */ \"./src/modules/removeItems.js\");\n\n\n\n\nconst generateList = (items, listItemsDiv) => {\n  listItemsDiv.innerHTML = '';\n\n  items.forEach((item) => {\n    const listItem = document.createElement('li');\n    listItem.className = 'list-item';\n    const listItemCheck = _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.createCheckbox();\n    const itemDescription = _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.createParagraph(item.description);\n    const deleteIcon = _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.createImage('options-img', _imgs_delete_png__WEBPACK_IMPORTED_MODULE_1__);\n    _domManipulation_js__WEBPACK_IMPORTED_MODULE_0__.appendChildren(listItem, listItemCheck, itemDescription, deleteIcon);\n    listItemsDiv.appendChild(listItem);\n\n    deleteIcon.addEventListener('click', () => {\n      (0,_removeItems_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(item.index - 1, items);\n      generateList(items, listItemsDiv);\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generateList);\n\n\n//# sourceURL=webpack://webpack-starter/./src/modules/generateList.js?");
+
+/***/ }),
+
+/***/ "./src/modules/removeItems.js":
+/*!************************************!*\
+  !*** ./src/modules/removeItems.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst removeItems = (indexToRemove, itemsArray) => {\n  if (indexToRemove >= 0 && indexToRemove < itemsArray.length) {\n    itemsArray.splice(indexToRemove, 1);\n    for (let i = indexToRemove; i < itemsArray.length; i += 1) {\n      itemsArray[i].index = i + 1;\n    }\n    localStorage.setItem('todoItemsData', JSON.stringify(itemsArray));\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (removeItems);\n\n\n//# sourceURL=webpack://webpack-starter/./src/modules/removeItems.js?");
 
 /***/ }),
 
@@ -160,6 +170,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/imgs/delete.png":
+/*!*****************************!*\
+  !*** ./src/imgs/delete.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"1ce1f523c16f7af7ecc0.png\";\n\n//# sourceURL=webpack://webpack-starter/./src/imgs/delete.png?");
+
+/***/ }),
+
 /***/ "./src/imgs/diskette.png":
 /*!*******************************!*\
   !*** ./src/imgs/diskette.png ***!
@@ -167,16 +187,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"b3b344faf03b154e316b.png\";\n\n//# sourceURL=webpack://webpack-starter/./src/imgs/diskette.png?");
-
-/***/ }),
-
-/***/ "./src/imgs/options.png":
-/*!******************************!*\
-  !*** ./src/imgs/options.png ***!
-  \******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"4f742a6a698fe36e57db.png\";\n\n//# sourceURL=webpack://webpack-starter/./src/imgs/options.png?");
 
 /***/ }),
 

@@ -59,6 +59,7 @@
 - **List structure layout**
 - **Adding a new item**
 - **Removing a selected item**
+- **Editing a selected item**
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

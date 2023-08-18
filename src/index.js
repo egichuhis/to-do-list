@@ -5,6 +5,7 @@ import getStoredTodoItems from './modules/todoItems.js';
 import * as DOM from './modules/domManipulation.js';
 import generateList from './modules/generateList.js';
 import addItems from './modules/addItems.js';
+import clearCompleted from './modules/clearCompleted.js';
 
 const createComponent = () => {
   const listContainer = document.getElementById('list-container');
@@ -33,6 +34,10 @@ const createComponent = () => {
     if (event.key === 'Enter') {
       addItems(todoItems, listItemsDiv);
     }
+  });
+
+  listFooter.addEventListener('click', () => {
+    clearCompleted();
   });
 };
 

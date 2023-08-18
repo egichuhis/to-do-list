@@ -74,6 +74,17 @@
   color: grey;
 }
 
+#list-footer-div h4 {
+  color: red;
+  border: grey solid 1px;
+  padding: 2px;
+}
+
+#list-footer-div h4:hover {
+  color: white;
+  background-color: red;
+}
+
 .edit-input {
   width: 500px;
   border: none;

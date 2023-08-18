@@ -44,6 +44,7 @@ const generateList = (items, listItemsDiv) => {
 
     listItemCheck.addEventListener('click', () => {
       checkItem(item, items, descriptionInput);
+      generateList(items, listItemsDiv);
     });
   });
 };

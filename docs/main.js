@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst checkItem = (item, items, descriptionInput) => {\n  if (item.complete) {\n    item.complete = false;\n    descriptionInput.classList.remove('strikethrough');\n  } else {\n    item.complete = true;\n    descriptionInput.classList.add('strikethrough');\n  }\n\n  localStorage.setItem('todoItemsData', JSON.stringify(items));\n  return items;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (checkItem);\n\n\n//# sourceURL=webpack://webpack-starter/./src/modules/checkItem.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst checkItem = (item, items) => {\n  if (item.complete) {\n    item.complete = false;\n  } else {\n    item.complete = true;\n  }\n\n  localStorage.setItem('todoItemsData', JSON.stringify(items));\n  return items;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (checkItem);\n\n\n//# sourceURL=webpack://webpack-starter/./src/modules/checkItem.js?");
 
 /***/ }),
 

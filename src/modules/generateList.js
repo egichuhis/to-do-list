@@ -2,6 +2,7 @@ import * as DOM from './domManipulation.js';
 import deleteIconImg from '../imgs/delete.png';
 import removeItems from './removeItems.js';
 import editItem from './editItem.js';
+import checkItem from './checkItem.js';
 
 const generateList = (items, listItemsDiv) => {
   listItemsDiv.innerHTML = '';
@@ -16,6 +17,13 @@ const generateList = (items, listItemsDiv) => {
     descriptionInput.value = item.description;
     descriptionInput.className = 'edit-input';
     const deleteIcon = DOM.createImage('options-img', deleteIconImg);
+
+    if (item.complete) {
+      descriptionInput.classList.add('strikethrough');
+    } else {
+      descriptionInput.classList.remove('strikethrough');
+    }
+
     DOM.appendChildren(listItem, listItemCheck, itemIndex, descriptionInput, deleteIcon);
     listItemsDiv.appendChild(listItem);
 
@@ -32,6 +40,10 @@ const generateList = (items, listItemsDiv) => {
       editItem(item, descriptionInput.value, items);
       localStorage.setItem('todoItemsData', JSON.stringify(items));
       generateList(items, listItemsDiv);
+    });
+
+    listItemCheck.addEventListener('click', () => {
+      checkItem(item, items, descriptionInput);
     });
   });
 };

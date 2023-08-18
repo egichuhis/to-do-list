@@ -80,3 +80,8 @@
   outline: none;
   font-size: inherit;
 }
+
+.strikethrough {
+  text-decoration: line-through;
+  color: blue;
+}

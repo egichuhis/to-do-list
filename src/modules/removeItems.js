@@ -1,9 +1,13 @@
 const removeItems = (indexToRemove, itemsArray) => {
   if (indexToRemove >= 0 && indexToRemove < itemsArray.length) {
-    itemsArray.splice(indexToRemove, 1);
-    for (let i = indexToRemove; i < itemsArray.length; i += 1) {
-      itemsArray[i].index = i + 1;
+    itemsArray[indexToRemove].complete = false;
+
+    for (let i = indexToRemove + 1; i < itemsArray.length; i += 1) {
+      itemsArray[i].index = i;
     }
+
+    itemsArray.splice(indexToRemove, 1);
+
     localStorage.setItem('todoItemsData', JSON.stringify(itemsArray));
   }
 };

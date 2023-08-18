@@ -60,6 +60,8 @@
 - **Adding a new item**
 - **Removing a selected item**
 - **Editing a selected item**
+- **Marking a selected item as complete**
+- **Removing all items marked as complete at once**
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,8 +151,6 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Reordering a selected item (as drag-and-drop)**
-- [ ] **Marking a selected item as complete**
-- [ ] **Removing all items marked as complete at once**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

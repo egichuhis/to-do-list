@@ -12,10 +12,11 @@ const generateList = (items, listItemsDiv) => {
     const listItemCheck = DOM.createCheckbox();
     const descriptionInput = document.createElement('input');
     descriptionInput.type = 'text';
+    const itemIndex = DOM.createParagraph(`${item.index}.`);
     descriptionInput.value = item.description;
     descriptionInput.className = 'edit-input';
     const deleteIcon = DOM.createImage('options-img', deleteIconImg);
-    DOM.appendChildren(listItem, listItemCheck, descriptionInput, deleteIcon);
+    DOM.appendChildren(listItem, listItemCheck, itemIndex, descriptionInput, deleteIcon);
     listItemsDiv.appendChild(listItem);
 
     deleteIcon.addEventListener('click', () => {

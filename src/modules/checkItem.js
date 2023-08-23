@@ -1,3 +1,5 @@
+import saveToLocalStorage from './saveToLocalStorage.js';
+
 const checkItem = (item, items) => {
   if (item.complete) {
     item.complete = false;
@@ -5,7 +7,8 @@ const checkItem = (item, items) => {
     item.complete = true;
   }
 
-  localStorage.setItem('todoItemsData', JSON.stringify(items));
+  saveToLocalStorage(items);
+
   return items;
 };
 

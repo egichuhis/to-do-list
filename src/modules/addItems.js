@@ -1,4 +1,5 @@
 import generateList from './generateList.js';
+import saveToLocalStorage from './saveToLocalStorage.js';
 
 const addItems = (items, listItemsDiv) => {
   const addItemInput = document.getElementById('add-item-input');
@@ -12,7 +13,7 @@ const addItems = (items, listItemsDiv) => {
 
     items.push(newItem);
 
-    localStorage.setItem('todoItemsData', JSON.stringify(items));
+    saveToLocalStorage(items);
 
     generateList(items, listItemsDiv);
 

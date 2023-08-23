@@ -1,3 +1,5 @@
+import saveToLocalStorage from './saveToLocalStorage.js';
+
 const removeItems = (indexToRemove, itemsArray) => {
   if (indexToRemove >= 0 && indexToRemove < itemsArray.length) {
     itemsArray[indexToRemove].complete = false;
@@ -8,7 +10,7 @@ const removeItems = (indexToRemove, itemsArray) => {
 
     itemsArray.splice(indexToRemove, 1);
 
-    localStorage.setItem('todoItemsData', JSON.stringify(itemsArray));
+    saveToLocalStorage(itemsArray);
   }
 };
 

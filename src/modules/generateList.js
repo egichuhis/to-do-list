@@ -3,6 +3,7 @@ import deleteIconImg from '../imgs/delete.png';
 import removeItems from './removeItems.js';
 import editItem from './editItem.js';
 import checkItem from './checkItem.js';
+import saveToLocalStorage from './saveToLocalStorage.js';
 
 const generateList = (items, listItemsDiv) => {
   listItemsDiv.innerHTML = '';
@@ -38,7 +39,7 @@ const generateList = (items, listItemsDiv) => {
 
     descriptionInput.addEventListener('blur', () => {
       editItem(item, descriptionInput.value, items);
-      localStorage.setItem('todoItemsData', JSON.stringify(items));
+      saveToLocalStorage(items);
       generateList(items, listItemsDiv);
     });
 

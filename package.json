@@ -11,7 +11,9 @@
   },
   "jest": {
     "testEnvironment": "jest-environment-jsdom",
-    "setupFiles": ["text-encoding"]
+    "setupFiles": [
+      "text-encoding"
+    ]
   },
   "keywords": [],
   "author": "Edwin Gichuhi",

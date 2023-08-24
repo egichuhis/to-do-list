@@ -21,4 +21,4 @@ const addItems = (items, listItemsDiv) => {
   }
 };
 
-export default addItems;
+module.exports = addItems;

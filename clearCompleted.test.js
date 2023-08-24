@@ -9,9 +9,6 @@ const clearCompleted = () => {
   const listItemsDiv = document.getElementById('list-items-div');
   generateList(filteredItems, listItemsDiv);
 };
-
-
-
 describe('clearCompleted', () => {
   test('clears completed items and updates UI', () => {
     const mockItems = [

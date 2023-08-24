@@ -55,6 +55,9 @@
 <details>
   <summary>Webpack</summary>
 </details>
+<details>
+  <summary>Jest</summary>
+</details>
 
 <!-- Features -->
 
@@ -66,6 +69,7 @@
 - **Editing a selected item**
 - **Marking a selected item as complete**
 - **Removing all items marked as complete at once**
+- **Tests for JS modules**
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,6 +153,12 @@ Example command:
 - GitHub: [@githubhandle](https://github.com/egichuhis)
 - Twitter: [@twitterhandle](https://twitter.com/egichuhis)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/edwin-gichuhi/)
+
+👤 **Garvin Chimone**
+
+- GitHub: [@Chimoneg27](https://github.com/Chimoneg27)
+- Twitter: [@GarvinChimone](https://twitter.com/GarvinChimone)
+- LinkedIn: [Garvin Chimone](https://www.linkedin.com/in/garvin-chimone-37208924a/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

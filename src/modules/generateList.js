@@ -1,10 +1,10 @@
 import * as DOM from './domManipulation.js';
-import deleteIconImg from '../imgs/delete.png';
 import removeItems from './removeItems.js';
 import editItem from './editItem.js';
 import checkItem from './checkItem.js';
 import saveToLocalStorage from './saveToLocalStorage.js';
 
+const deleteIconImg = '../imgs/delete.png';
 const generateList = (items, listItemsDiv) => {
   listItemsDiv.innerHTML = '';
 

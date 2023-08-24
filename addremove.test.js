@@ -4,12 +4,12 @@ import removeItems from './src/modules/removeItems.js';
 
 // Mock the DOM environment
 const mockHtml = `
-  <div id="list-items-div">
+  <div//github.com/import-js/eslint-plugin-import/blob/v2.28.0/docs/rules/no-extraneous-dependencies.md id="list-items-div">
     <input id="add-item-input" />
     <ul id="item-list">
       <!-- existing list items -->
     </ul>
-  </div>
+  </div https:>
 `;
 
 beforeEach(() => {

@@ -1,4 +1,3 @@
-
 import generateList from './src/modules/generateList.js';
 import saveToLocalStorage from './src/modules/saveToLocalStorage.js';
 import getStoredTodoItems from './src/modules/todoItems.js';
@@ -10,8 +9,6 @@ const clearCompleted = () => {
   const listItemsDiv = document.getElementById('list-items-div');
   generateList(filteredItems, listItemsDiv);
 };
-
-
 
 const mockElement = document.createElement('div');
 mockElement.setAttribute = jest.fn();

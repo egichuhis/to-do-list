@@ -37,7 +37,7 @@
 
 # 📖 TO-DO LIST <a name="about-project"></a>
 
-**TO-DO LIST** is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
+**TO-DO LIST** is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete, and also clear the completed items. You can also edit your items incase of typos, etc.
 
 ## 🛠 Built With <a name="built-with"></a>
 
